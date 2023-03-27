@@ -7,15 +7,24 @@ from apache_beam.options.pipeline_options import PipelineOptions
 # local modules
 from constants import Constants as run_constants
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = run_constants.serviceAccount.value
 
+# START: setting GS credentials
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = run_constants.serviceAccount.value
+# END: setting GS credentials
+
+# START: defining helper functions
 def calculate_trip_time(record):
+    from datetime import datetime # importing here otherwise DataFlow workers won't find it 
+    ## ```NameError: name 'datetime' is not defined```
+    ## I'm still trying to solve it
 
     pickup_datetime = datetime.strptime(record[1], '%Y-%m-%d %H:%M:%S')
     dropoff_datetime = datetime.strptime(record[2], '%Y-%m-%d %H:%M:%S')
     
     return (record[1].split(' ')[0], float((dropoff_datetime - pickup_datetime).seconds))
+## END: defining helper functions
 
+## START: defining main function
 def run():
   pipeline_options = {
       'project': 'k-practices' ,
@@ -24,7 +33,7 @@ def run():
       'staging_location': 'gs://practicing-beam/temp',
       'temp_location': 'gs://practicing-beam/temp',
       'template_location': 'gs://practicing-beam/template/batch_job_df_gcs_taxi',
-      #'save_main_session' : True 
+      'save_main_session' : True 
   }
 
   # defining the pipeline
@@ -71,6 +80,8 @@ def run():
 
   # executing the entire pipeline
   p1.run()
+# END: defining main function
+
 
 if __name__ == '__main__':
   run()
