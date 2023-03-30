@@ -1,6 +1,7 @@
 import os
 import json
 
+# beam-specific modules
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
 
@@ -11,7 +12,9 @@ from constants import Constants as run_constants
 class Decode(beam.DoFn):
   def process(self,record):
 
-    import json
+    import json # importing here otherwise DataFlow workers won't find it 
+    ## ```NameError: name 'json' is not defined```
+    ## I'm still trying to solve it
 
     raw_data = record.decode("utf-8")
 
@@ -29,7 +32,6 @@ class Decode(beam.DoFn):
             data['email']
         ) for data in raw_data
     ]
-    
     
     return tuple(records)
 
@@ -73,7 +75,7 @@ def run():
     )
 
     user_data = (
-    pcollection_entrada
+        pcollection_entrada
         | "Decode Json" >> beam.ParDo(Decode())
         | "Convert tuple to dict" >> beam.Map(lambda record: create_dict(record))
         | "Save to BigQuery" >> beam.io.WriteToBigQuery(
@@ -91,5 +93,3 @@ def run():
 
 if __name__ == '__main__':
   run()
-
-# gcloud dataflow jobs run user_data --gcs-location gs://practicing-beam/template/streaming_user_bq --region us-east1 --staging-location gs://practicing-beam/temp/ 
