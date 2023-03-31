@@ -7,7 +7,7 @@
   <h3 align="center">Basic Streaming Pipeline With Apache Beam and Dataflow</h3>
 
   <p align="center">
-    Streaming real-time data of users registered on the website
+    Streaming real-time data of customers registered on the website
   </p>
 </div>
 
@@ -49,7 +49,21 @@
   <img src="./images/resources-diagram.png" >
 </p>
 
-(_TODO_)
+<p align="justify">
+&ensp;&ensp;&ensp;&ensp;Making real-time data pipeline is really very challenging, since we have to deal with data volume changing, latency, data quality, many data source, and so on. Even though we have to keep those things in mind, when we are starting in this field, we must start somewhere.
+
+&ensp;&ensp;&ensp;&ensp;In this way, the purpose of this repo is to get in touch with some streaming capabilities of Apache Beam and Dataflow (as a runner). So, it basically consists of (fake) real-time data loading into bigquery using Pub/Sub for event data streaming and Dataflow for processing.
+
+### Business Context
+
+<p align="justify">
+&ensp;&ensp;&ensp;&ensp;In order to be more business-like, we created a fake business context.
+
+&ensp;&ensp;&ensp;&ensp;Our company <strong>KB Tech</strong> has a global ecommerce website where many customers are registered every minute. The data engineering team has already migrated historical data to the data warehouse. However, the marketing and analysts teams need new customers' data to be available as soon as they are generated so they can work on products offering, customer segmentation.
+</p>
+
+_(to be continued..)_
+
 
 
 ### Built With
@@ -95,8 +109,6 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
 
 * [TO DO]((_TODO_))
 
