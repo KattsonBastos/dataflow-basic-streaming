@@ -72,7 +72,7 @@
 <p align="justify">
 &ensp;&ensp;&ensp;&ensp;In order to be more business-like, we created a fake business context.
 
-&ensp;&ensp;&ensp;&ensp;Our company <strong>KB Tech</strong> has a global ecommerce website where many customers are registered every minute. Our data engineering team has already migrated historical data to a warehouse. However, the marketing and analytics teams need new customers' data to be available as soon as they are generated so they can work on products offering and customer segmentation for faster business value generation.
+&ensp;&ensp;&ensp;&ensp;Our company <strong>KBS Tech</strong> has a global ecommerce website where many customers are registered every minute. Our data engineering team has already migrated historical data to a warehouse. However, the marketing and analytics teams need new customers' data to be available as soon as they are generated so they can work on products offering and customer segmentation for faster business value generation.
 <br>
 &ensp;&ensp;&ensp;&ensp;After some time of brainstorming, we decided to load the data through a Pub/Sub+Dataflow workload, since the company already use Google Cloud Platform in almost all of it solutions and it was the most effective solution we found.
 </p>
