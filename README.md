@@ -17,7 +17,7 @@
 </p>
 
 <p align="justify">
-&ensp;&ensp;&ensp;&ensp;That's where this <a href="https://www.udemy.com/course/data-engineering-with-google-dataflow-and-apache-beam/">amazing couse</a> from Casio Bolba comes which I higly recommend. There we develop some basic batch and streaming pipelines using Beam and Dataflow.
+&ensp;&ensp;&ensp;&ensp;That's where this <a href="https://www.udemy.com/course/data-engineering-with-google-dataflow-and-apache-beam/" target="_blank">amazing couse</a> from Casio Bolba comes which I higly recommend. There we develop some basic batch and streaming pipelines using Beam and Dataflow.
 </p>
 
 <br>
@@ -93,14 +93,14 @@
   <img src="./images/resources-used.png" >
 </p>
 
-- Data Source: <a href="https://randomuser.me/">Open Random user data API</a>
-- <a href="https://www.python.org/">Python 3.8.16</a>
-- <a href="https://beam.apache.org/">Apache beam</a>
-- <a href="https://www.terraform.io/">Terraform</a>
-- <a href="https://cloud.google.com/pubsub?hl=pt-br">Google Cloud Pub/Sub</a>
-- <a href="https://cloud.google.com/dataflow?hl=pt-br">Google Cloud Dataflow</a>
-- <a href="https://cloud.google.com/storage?hl=pt-br">Google Cloud Storage</a>
-- <a href="https://cloud.google.com/bigquery?hl=pt-br">Google Bigquery</a>
+- Data Source: <a href="https://randomuser.me/" target="_blank">Open Random user data API</a>
+- <a href="https://www.python.org/" target="_blank">Python 3.8.16</a>
+- <a href="https://beam.apache.org/" target="_blank">Apache beam</a>
+- <a href="https://www.terraform.io/" target="_blank">Terraform</a>
+- <a href="https://cloud.google.com/pubsub?hl=pt-br" target="_blank">Google Cloud Pub/Sub</a>
+- <a href="https://cloud.google.com/dataflow?hl=pt-br" target="_blank">Google Cloud Dataflow</a>
+- <a href="https://cloud.google.com/storage?hl=pt-br" target="_blank">Google Cloud Storage</a>
+- <a href="https://cloud.google.com/bigquery?hl=pt-br" target="_blank">Google Bigquery</a>
 
 
 
@@ -113,11 +113,11 @@
 </p>
 
 <p align="justify">
-&ensp;&ensp;&ensp;&ensp;First of all, we need some data. We chose an open API that generates random user data, such as name, email, location, personal identification (according to each country). It is a good choice to simulate real-time user registration, since everytime we make a resquest, random data are returned. Once the data is gathered by a <a href="https://github.com/KattsonBastos/dataflow-learning/blob/main/src/topic_writer.py">Python script</a>, they are pushed into a Pub/Sub topic by the same script (which is basically an eternal loop doing that job).
+&ensp;&ensp;&ensp;&ensp;First of all, we need some data. We chose an open API that generates random user data, such as name, email, location, personal identification (according to each country). It is a good choice to simulate real-time user registration, since everytime we make a resquest, random data are returned. Once the data is gathered by a <a href="https://github.com/KattsonBastos/dataflow-learning/blob/main/src/topic_writer.py" target="_blank">Python script</a>, they are pushed into a Pub/Sub topic by the same script (which is basically an eternal loop doing that job).
 </p>
 
 <p align="justify">
-&ensp;&ensp;&ensp;&ensp; On the other hand, a Dataflow Job is readily waiting for data arriving in the topic, so it can pull, transform, and load them into BigQuery. <a href="https://github.com/KattsonBastos/dataflow-learning/blob/main/src/user_streaming.py">The pipeline</a> has just four steps, as shows the image bellow:
+&ensp;&ensp;&ensp;&ensp; On the other hand, a Dataflow Job is readily waiting for data arriving in the topic, so it can pull, transform, and load them into BigQuery. <a href="https://github.com/KattsonBastos/dataflow-learning/blob/main/src/user_streaming.py" target="_blank">The pipeline</a> has just four steps, as shows the image bellow:
 </p>
 
 <p align="center">
@@ -159,7 +159,7 @@
 ### Quick tip
 
 <p align="justify">
-&ensp;&ensp;&ensp;&ensp;I'm using <a href="https://www.gitpod.io/">Gitpod</a> to work on this project. Gitpod provides an initialized workspace integrated with some code repository, such as Github. In short, it is basically a VScode we access through the browser and it already has Python, Docker, and some other stuff installed, so we don't need to install things in our machine. They offer a free plan with up to 50 hour/mo (no credit card required), which is more than enough for practical projects (at least for me).
+&ensp;&ensp;&ensp;&ensp;I'm using <a href="https://www.gitpod.io/" target="_blank">Gitpod</a> to work on this project. Gitpod provides an initialized workspace integrated with some code repository, such as Github. In short, it is basically a VScode we access through the browser and it already has Python, Docker, and some other stuff installed, so we don't need to install things in our machine. They offer a free plan with up to 50 hour/mo (no credit card required), which is more than enough for practical projects (at least for me).
 </p>
 
 <p align="center">
@@ -170,9 +170,9 @@
 
 ### Prerequisites and Installations
 
-* Google Cloud Account: if you don't have one, <a href="https://k21academy.com/google-cloud/create-google-cloud-free-tier-account/"> here</a> you can find a nice explanation of how to create a new one with free resources for the period of 90 days
-* Google Service Account and Key: we need it to authenticate to GCP. <a href="https://developers.google.com/android/management/service-account">Here's an official guide</a> on how to create an account and <a href="https://cloud.google.com/iam/docs/keys-create-delete#iam-service-account-keys-create-console">here's</a> how to create a key. Remeber to save the key json file in your machine.
-* Terraform and gcloud CLI: you can use <a href="https://github.com/KattsonBastos/dataflow-learning/blob/main/src/setup.sh">this script</a> to install them if you use a Debian/Ubuntu-based system. Just run:
+* Google Cloud Account: if you don't have one, <a href="https://k21academy.com/google-cloud/create-google-cloud-free-tier-account/" target="_blank"> here</a> you can find a nice explanation of how to create a new one with free resources for the period of 90 days
+* Google Service Account and Key: we need it to authenticate to GCP. <a href="https://developers.google.com/android/management/service-account" target="_blank">Here's an official guide</a> on how to create an account and <a href="https://cloud.google.com/iam/docs/keys-create-delete#iam-service-account-keys-create-console"  target="_blank">here's</a> how to create a key. Remeber to save the key json file in your machine.
+* Terraform and gcloud CLI: you can use <a href="https://github.com/KattsonBastos/dataflow-learning/blob/main/src/setup.sh"  target="_blank">this script</a> to install them if you use a Debian/Ubuntu-based system. Just run:
   ```sh
   bash setup.py
   ```
@@ -216,7 +216,7 @@
     ```sh
     gcloud storage buckets create gs:<bucket_name> --project=<project_id> --default-storage-class=STANDARD --location=us-east1
     ```
-    Remember to change the bucket name in the <a href="https://github.com/KattsonBastos/dataflow-learning/blob/main/src/infra/providers.tf">Terraform provers file</a> and set yours.
+    Remember to change the bucket name in the <a href="https://github.com/KattsonBastos/dataflow-learning/blob/main/src/infra/providers.tf" target="_blank">Terraform provers file</a> and set yours.
     You can create it through the Console, if you want.
 
 6. Create cloud resources with Terraform: <br>
@@ -269,8 +269,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* <a href="https://www.linkedin.com/in/cassiobolba/"> Cassio Bolba</a> course on <a href="https://www.udemy.com/course/data-engineering-with-google-dataflow-and-apache-beam/">Data Engineering using Dataflow and Beam</a>: this course is really amazing and it will be very helpful if you want to start playing with those two tools plus BigQuery and Cloud Storage. (<a href="https://www.udemy.com/course/engenharia-de-dados-com-apache-beam-google-dataflow-gcp/">Portuguese course version</a>)
-* <a href="https://www.linkedin.com/company/stack-tecnologias/">Stack Academy</a> courses on Data Pipelines with GCP and Infra as a Code: both was very enlightening about there tools.
+* <a href="https://www.linkedin.com/in/cassiobolba/" target="_blank"> Cassio Bolba</a> course on <a href="https://www.udemy.com/course/data-engineering-with-google-dataflow-and-apache-beam/" target="_blank">Data Engineering using Dataflow and Beam</a>: this course is really amazing and it will be very helpful if you want to start playing with those two tools plus BigQuery and Cloud Storage. (<a href="https://www.udemy.com/course/engenharia-de-dados-com-apache-beam-google-dataflow-gcp/" target="_blank">Portuguese course version</a>)
+* <a href="https://www.linkedin.com/company/stack-tecnologias/" target="_blank">Stack Academy</a> courses on Data Pipelines with GCP and Infra as a Code: both was very enlightening about there tools.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
