@@ -198,7 +198,7 @@
 
 2. Clone the repo:
     ```sh
-    git clone https://github.com/KattsonBastos/dataflow-learning.git
+    git clone https://github.com/KattsonBastos/dataflow-basic-streaming.git
     ```
 
 3. Create a Python's virtual environment (I'm using virtualenv for simplicity) and activate it:
