@@ -60,9 +60,9 @@ def run():
         'project': 'k-practices',
         'runner': 'DataflowRunner',
         'region': 'us-east1',
-        'staging_location': 'gs://practicing-beam/temp',
-        'temp_location': 'gs://practicing-beam/temp',
-        'template_location': 'gs://practicing-beam/template/streaming_user_bq',
+        'staging_location': run_constants.beam_staging_path.value,
+        'temp_location': run_constants.beam_staging_path.value,
+        'template_location': run_constants.beam_template_path.value + '/streaming_user_bq',
         'save_main_session': True,
         'streaming' : True
     }
@@ -83,7 +83,7 @@ def run():
         schema=table_schema,
         write_disposition=beam.io.BigQueryDisposition.WRITE_APPEND,
         create_disposition=beam.io.BigQueryDisposition.CREATE_IF_NEEDED,
-        custom_gcs_temp_location='gs://practicing-beam/temp')
+        custom_gcs_temp_location=run_constants.beam_staging_path.value)
     )
 
     # executing the entire pipeline
