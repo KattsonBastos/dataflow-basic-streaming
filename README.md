@@ -17,7 +17,7 @@
 </p>
 
 <p align="justify">
-&ensp;&ensp;&ensp;&ensp;That's where this <a href="https://www.udemy.com/course/data-engineering-with-google-dataflow-and-apache-beam/" target="_blank">amazing couse</a> from Casio Bolba comes which I higly recommend. There we develop some basic batch and streaming pipelines using Beam and Dataflow.
+&ensp;&ensp;&ensp;&ensp;That's where this <a href="https://www.udemy.com/course/data-engineering-with-google-dataflow-and-apache-beam/" target="_blank">amazing course</a> from Casio Bolba comes which I higly recommend. There we develop some basic batch and streaming pipelines using Beam and Dataflow.
 </p>
 
 <br>
